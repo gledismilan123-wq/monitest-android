@@ -9,7 +9,7 @@ source.include_exts = py,png,jpg,jpeg,kv,json,ttf
 source.include_patterns = assets/*,assets/**/*
 
 version = 0.1
-requirements = python3,kivy==2.3.1,kivymd==2.0.0,pillow,reportlab,plyer,pyjnius
+requirements = python3,kivy==2.3.1,kivymd==2.0.0,pillow,reportlab==5.0.1,plyer,pyjnius
 
 orientation = portrait,landscape,portrait-reverse,landscape-reverse
 fullscreen = 0
@@ -28,6 +28,15 @@ android.allow_backup = True
 # GitHub Actions (errori HTTP 502/504 ripetuti): questa e' una copia della
 # stessa recipe che scarica lo stesso file da un mirror SourceForge.
 p4a.local_recipes = %(source.dir)s/local-recipes
+
+# La recipe interna "reportlab" di python-for-android scarica il sorgente da
+# un vecchio changeset Mercurial (hg.reportlab.com) protetto da Cloudflare,
+# che blocca qualunque download automatico (errore 403 sempre, non e' un
+# problema di rete transitorio). Il pacchetto reportlab moderno (quello su
+# PyPI, gia' fissato sopra alla versione 5.0.1) e' puro Python - non ha piu'
+# bisogno della vecchia patch/compilazione legata a freetype - quindi si
+# disattiva la recipe e lo si installa semplicemente con pip.
+p4a.extra_args = --blacklist-requirements=reportlab
 
 # Cartelle create in automatico dall'app (data/foto/PDF/template) NON vanno
 # incluse nel pacchetto sorgente.
