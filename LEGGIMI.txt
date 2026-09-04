@@ -1,0 +1,31 @@
+MoniTest per Android (v1)
+
+COME SI INSTALLA
+1. Scarica il file .apk (link fornito a fine build).
+2. Sul telefono, apri il file scaricato: se richiesto, consenti "Installa da
+   origini sconosciute" solo per questa installazione.
+3. Apri l'app "MoniTest" e accedi con: utente = admin   password = admin
+
+COSA C'E' IN QUESTA PRIMA VERSIONE
+- Le 16 maschere di ispezione NDT, identiche a quelle del programma Access
+  (stessi campi, stesse tendine).
+- Foto: tocca un riquadro per scattarne una con la fotocamera o sceglierla
+  dalla galleria.
+- Ricerca/modifica/eliminazione delle schede gia' compilate.
+- Esportazione PDF Report (stesso motore di stampa del programma Windows).
+- Amministrazione: gestione utenti e gestione delle voci delle tendine
+  (Customer, Inspector, Material, ecc.).
+- Layout adattato automaticamente a qualsiasi telefono, incluso il Galaxy
+  Z Fold: chiuso mostra 1-2 colonne, aperto ne mostra di piu' per sfruttare
+  lo schermo grande.
+
+COSA MANCA (rimandato a una versione successiva)
+- L'editor visivo "trascina e sistema" per personalizzare a mano la
+  disposizione dei campi a schermo e nel PDF: in questa versione il layout
+  e' fisso (ma gia' leggibile e ordinato).
+
+DOVE FINISCONO I DATI
+Database, foto e PDF esportati restano nella cartella privata dell'app sul
+telefono. Disinstallando l'app si perdono anche questi dati: se servisse un
+backup o un trasferimento su un altro telefono, fatelo presente cosi' si
+aggiunge una funzione apposita.
