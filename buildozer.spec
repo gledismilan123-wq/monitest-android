@@ -11,7 +11,7 @@ source.include_patterns = assets/*,assets/**/*
 version = 0.1
 requirements = python3,kivy==2.3.1,kivymd==2.0.0,pillow,reportlab,plyer,pyjnius
 
-orientation = all
+orientation = portrait,landscape,portrait-reverse,landscape-reverse
 fullscreen = 0
 icon.filename = %(source.dir)s/assets/logo.png
 
