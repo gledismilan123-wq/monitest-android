@@ -23,9 +23,15 @@ android.archs = arm64-v8a,armeabi-v7a
 android.accept_sdk_license = True
 android.allow_backup = True
 
+# Il sito da cui la recipe "freetype" di python-for-android scarica il
+# sorgente (download.savannah.gnu.org) risulta irraggiungibile dai runner
+# GitHub Actions (errori HTTP 502/504 ripetuti): questa e' una copia della
+# stessa recipe che scarica lo stesso file da un mirror SourceForge.
+p4a.local_recipes = %(source.dir)s/local-recipes
+
 # Cartelle create in automatico dall'app (data/foto/PDF/template) NON vanno
 # incluse nel pacchetto sorgente.
-source.exclude_dirs = devdata,.venv,.github,bin,.buildozer
+source.exclude_dirs = devdata,.venv,.github,bin,.buildozer,local-recipes
 
 [buildozer]
 log_level = 2
