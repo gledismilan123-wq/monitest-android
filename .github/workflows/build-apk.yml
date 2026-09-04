@@ -46,8 +46,12 @@ jobs:
           key: buildozer-local-${{ hashFiles('buildozer.spec') }}
 
       - name: Build APK (debug)
-        run: |
-          yes | buildozer -v android debug
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 45
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: yes | buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
